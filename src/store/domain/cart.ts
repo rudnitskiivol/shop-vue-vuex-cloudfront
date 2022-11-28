@@ -34,7 +34,7 @@ const cartModuleStore: Module<CartState, any> = {
 		},
 		// =
 		addProductToCart(state, product: Product) {
-			const cartItems = state.cartItems;
+			const cartItems = state.cartItems.length ? state.cartItems : [];
 			const existingCartItem = findProductInCartById(cartItems, product.id);
 
 			if (existingCartItem) {
